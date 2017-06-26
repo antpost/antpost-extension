@@ -1,26 +1,39 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
+  "update_url": "https://clients2.google.com/service/update2/crx",
   "manifest_version": 2,
-  "name": "SCheckPro",
-  "description": "Check Keyword Position In Google",
-  "version": "8.2",
+  "name": "AntPost",
+  "description": "Automatic Tool like Ant",
+  "version": "1.0",
+  "icons": {
+    "16": "img/logo-16.png",
+    "48": "img/logo-48.png",
+    "128": "img/logo.png"
+  },
   "browser_action": {
-    "default_icon": "icon.png"
+    "default_icon": "img/logo.png"
   },
   "permissions": [
-    "activeTab","tabs",
+    "activeTab",
+    "tabs",
     "http://*/*",
-	"https://*/*"
+    "https://*/*"
   ],
-   "content_scripts": [
+  "content_scripts": [
     {
-      "matches": ["http://*/*","https://*/*"],
-      "js": ["jquery.js","popup.js"],
-	  "run_at":"document_start"
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "3rd/jquery.js",
+        "js/popup.js"
+      ],
+      "run_at": "document_start"
     }
   ],
-   "background": {
-    "scripts": ["background.js"]
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
   }
 }
